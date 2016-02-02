@@ -31,6 +31,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     compile("org.springframework.boot:spring-boot-starter-websocket")
+	compile("io.reactivex:rxjava:1.1.0")
     compile("org.springframework:spring-messaging")
     testCompile('org.easytesting:fest-assert:1.4')
 }
