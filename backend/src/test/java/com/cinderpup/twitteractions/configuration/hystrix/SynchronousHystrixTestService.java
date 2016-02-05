@@ -4,7 +4,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HystrixTestService {
+public class SynchronousHystrixTestService {
 
     @HystrixCommand(fallbackMethod = "getRealValue")
     public String getValueWeCouldntFetch() {

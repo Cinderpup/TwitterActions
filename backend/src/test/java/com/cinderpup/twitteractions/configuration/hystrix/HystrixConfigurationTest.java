@@ -17,14 +17,21 @@ public class HystrixConfigurationTest {
     public static final String EXPECTED_VALUE = "hello world";
 
     @Autowired
-    private HystrixTestService hystrixTestService;
+    private SynchronousHystrixTestService synchronousHystrixTestService;
+    @Autowired
+    private AsynchronousHystrixTestService asynchronousHystrixTestService;
 
     @Test
-    public void getValueButCouldntReachServer() {
-        assertThat(hystrixTestService.getValueWeCouldntFetch())
+    public void getValueForSynchronousCall() {
+        assertThat(synchronousHystrixTestService.getValueWeCouldntFetch())
                 .isEqualTo(EXPECTED_VALUE);
     }
 
+    @Test
+    public void getValueForAsynchronousCall() {
+        assertThat(asynchronousHystrixTestService.getValueWeCouldntFetch().toBlocking().single())
+                .isEqualTo(EXPECTED_VALUE);
+    }
 
 
 }
