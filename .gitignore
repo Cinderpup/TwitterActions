@@ -15,3 +15,4 @@ frontend.iml
 frontend/dist
 frontend/node_modules
 frontend/typings
+frontend/out
