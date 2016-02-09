@@ -4,7 +4,7 @@ describe("endpoint: ActionEndpoint", () => {
     let $httpMock;
 
     beforeEach(() => {
-        $httpMock = jasmine.createSpy("$http", ["getActions"]);
+        $httpMock = jasmine.createSpyObj("$http", ["getActions"]);
     });
 
     describe("when calling the getAction methods", () => {

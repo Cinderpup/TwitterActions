@@ -1,26 +1,16 @@
-import "angular"
+import "angular";
 import IComponentOptions = angular.IComponentOptions;
+import {IActionModel} from "../../model/IActionModel";
 export class SidebarComponent implements IComponentOptions {
     public restrict: string = "E";
+    public bindings: any = {
+        actions: "<"
+    };
     public template: string = `
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
+            <li ng-class="{active:$first}" ng-repeat="action in $ctrl.actions"><a href="#">{{::action}}</a></li>
             </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">Nav item</a></li>
-                <li><a href="">Nav item again</a></li>
-                <li><a href="">One more nav</a></li>
-                <li><a href="">Another nav item</a></li>
-                <li><a href="">More navigation</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="">Nav item again</a></li>
-                <li><a href="">One more nav</a></li>
-                <li><a href="">Another nav item</a></li>
             </ul>
         </div>`;
 }

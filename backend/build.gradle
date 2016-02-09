@@ -9,6 +9,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('org.springframework:springloaded:1.2.0.RELEASE')
     }
 }
 
@@ -20,6 +21,14 @@ jar {
     baseName = 'TwitterActions'
     version = '1.0.0'
 }
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
 
 repositories {
     mavenLocal()

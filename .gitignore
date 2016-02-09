@@ -16,3 +16,6 @@ frontend/dist
 frontend/node_modules
 frontend/typings
 frontend/out
+.idea/
+backend/.gradle
+backend/build
